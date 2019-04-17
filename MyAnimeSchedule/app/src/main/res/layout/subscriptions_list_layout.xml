@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/SLbannerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/SLname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SLbannerView"
+        android:layout_alignStart="@+id/SLbannerView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="0dp"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="@color/RedColor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SLstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SLname"
+        android:layout_alignStart="@+id/SLbannerView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="0dp"
+        android:text="Status"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SLseasonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SLstatus"
+        android:layout_alignStart="@+id/SLbannerView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="0dp"
+        android:text="Seasons Count"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SLlastSeasonEpisodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SLseasonCount"
+        android:layout_alignStart="@+id/SLbannerView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="0dp"
+        android:text="Last Season Epsodes"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SLlastEpisodeAirDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SLlastSeasonEpisodes"
+        android:layout_alignStart="@+id/SLbannerView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="0dp"
+        android:text="Last Episode Air Date"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18sp" />
+
+</RelativeLayout>

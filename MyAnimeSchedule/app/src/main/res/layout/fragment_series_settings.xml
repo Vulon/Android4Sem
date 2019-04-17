@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/FDdetailsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Details"
+        android:textColor="@color/yellowColor" />
+
+    <TextView
+        android:id="@+id/FDepisodesLabel"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/FDdetailsLabel"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/FDsettingsLabel"
+        android:layout_toEndOf="@+id/FDdetailsLabel"
+        android:text="Episodes"
+        android:textAlignment="center"
+        android:textColor="@color/yellowColor" />
+
+    <TextView
+        android:id="@+id/FDsettingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/FDdetailsLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:text="Settings"
+        android:textAlignment="center"
+        android:textColor="@color/RedColor" />
+
+    <TextView
+        android:id="@+id/FDsettingsRealDayOfWeek"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/FDdetailsLabel"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="12dp"
+        android:text="Real Day Of week"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor" />
+
+    <TextView
+        android:id="@+id/FDsettingsRealHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/FDsettingsRealDayOfWeek"
+        android:layout_alignEnd="@+id/FDsettingsLabel"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toEndOf="@+id/FDsettingsRealDayOfWeek"
+        android:text="Real Hour"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor" />
+
+    <Spinner
+        android:id="@+id/FDspinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="20dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FDsettingsRealDayOfWeek"
+        android:layout_alignStart="@+id/FDsettingsRealDayOfWeek"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:text="User configurated notifications recieve time"
+        android:textColor="@color/colorAccent"
+        tools:text="User configurated notifications recieve time" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FDepisodesLabel"
+        android:layout_alignStart="@+id/FDdetailsLabel"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="26dp"
+        android:text="Default notifications revieve time:"
+        android:textColor="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/FDsettingsHourPicker"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FDspinner"
+        android:layout_alignEnd="@+id/FDsettingsRealHour"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="21dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="122dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/FDsettingsHourPicker"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="Notification Hour"
+        android:textColor="@color/colorAccent" />
+
+    <Switch
+        android:id="@+id/FDnotificationsSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FDsettingsHourPicker"
+        android:layout_alignEnd="@+id/FDsettingsHourPicker"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="-3dp"
+        android:text="Recieve Notifications"
+        android:textAlignment="center"
+        android:textColor="@color/RedColor" />
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SeriesActivity">
+
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:elevation="0dp"
+        app:menu="@menu/bot_nav_bar_menu" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/SLrecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        tools:layout_anchor="@id/bottomNavigationBar" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/SLsearchButton"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/search"
+        android:visibility="visible"
+        app:backgroundTint="@color/yellowColor"
+        app:elevation="0dp"
+        app:layout_anchor="@id/bottomNavigationBar"
+        app:layout_anchorGravity="bottom|start"
+        tools:layout_anchor="@id/bottomNavigationBar" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/SLupdateButton"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="160dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/update"
+        android:visibility="visible"
+        app:backgroundTint="@color/yellowColor"
+        app:elevation="0dp"
+        app:layout_anchor="@id/SLsearchButton"
+        app:layout_anchorGravity="bottom|start"
+        tools:layout_anchor="@id/SLsearchButton" />
+
+</android.support.design.widget.CoordinatorLayout>

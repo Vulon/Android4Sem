@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.SeriesInfoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ItitleBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/ItitleName"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleBanner"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="10dp"
+                android:text="TitleName"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleNetwork"
+                android:layout_alignStart="@+id/ItitleNetwork"
+                android:layout_alignEnd="@+id/ItitleNetwork"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="Status"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleNetwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleAirDay"
+                android:layout_alignStart="@+id/ItitleAirDay"
+                android:layout_alignEnd="@+id/ItitleAirDay"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="Network"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleAirDay"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleFirstAired"
+                android:layout_alignStart="@+id/ItitleFirstAired"
+                android:layout_alignEnd="@+id/ItitleFirstAired"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="AirDay"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleName"
+                android:layout_alignStart="@+id/ItitleName"
+                android:layout_alignEnd="@+id/ItitleName"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="Genre"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleFirstAired"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleGenre"
+                android:layout_alignStart="@+id/ItitleGenre"
+                android:layout_alignEnd="@+id/ItitleGenre"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="First Aired"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ItitleOverView"
+                android:layout_width="233dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ItitleStatus"
+                android:layout_alignStart="@+id/ItitleStatus"
+                android:layout_alignEnd="@+id/ItitleStatus"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="0dp"
+                android:text="Overview"
+                android:textAlignment="center"
+                android:textColor="@color/RedColor"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/IbackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_rounded"
+        android:clickable="true"
+        android:src="@drawable/back_arrow"
+        app:backgroundTint="@color/yellowColor"
+        app:fabSize="auto" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/IsubscribeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="78dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_rounded"
+        android:clickable="true"
+        android:src="@drawable/subscribe"
+        app:backgroundTint="@color/yellowColor" />
+
+</android.support.design.widget.CoordinatorLayout>

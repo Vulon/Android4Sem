@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+  <TextView
+      android:id="@+id/seriesName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:text="Title"
+      android:textAlignment="center"
+      android:textColor="@color/colorPrimary" />
+
+  <TextView
+      android:id="@+id/seriesNetwork"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:paddingTop="5dp"
+      android:text="Network"
+      android:textAlignment="center" />
+
+  <TextView
+      android:id="@+id/seriesPublishDate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:paddingTop="5dp"
+      android:text="Publish date"
+      android:textAlignment="center" />
+
+  <TextView
+      android:id="@+id/seriesStatus"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:paddingTop="5dp"
+      android:text="Status"
+      android:textAlignment="center" />
+
+</LinearLayout>

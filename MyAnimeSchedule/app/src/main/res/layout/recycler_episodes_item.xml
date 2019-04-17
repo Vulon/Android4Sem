@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ELIlayout"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <TextView
+        android:id="@+id/ELInumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Number"
+        android:textColor="@color/blueColor" />
+
+    <TextView
+        android:id="@+id/ELIname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ELInumber"
+        android:layout_alignTop="@+id/ELInumber"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="0dp"
+        android:text="Name"
+        android:textColor="@color/RedColor" />
+
+    <TextView
+        android:id="@+id/ELIfirsrtAired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ELIname"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="FirstAired"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/ELIoverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ELIfirsrtAired"
+        android:layout_alignStart="@+id/ELInumber"
+        android:layout_alignEnd="@+id/ELIfirsrtAired"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="1dp"
+        android:text="Overview"
+        android:textAlignment="textStart"
+        android:textColor="@color/RedColor" />
+</RelativeLayout>
