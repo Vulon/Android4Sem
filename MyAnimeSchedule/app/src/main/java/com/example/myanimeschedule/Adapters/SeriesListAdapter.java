@@ -1,8 +1,9 @@
 package com.example.myanimeschedule.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,17 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.myanimeschedule.Activity.DetailsActivity;
+import com.example.myanimeschedule.DataStructure.FragmentStack;
 import com.example.myanimeschedule.DataStructure.SubscriptionsManager;
 import com.example.myanimeschedule.R;
 
 public class SeriesListAdapter extends RecyclerView.Adapter<SeriesListAdapter.SLViewHolder>{
     SubscriptionsManager manager;
     Context context;
+    FragmentManager fragmentManager;
 
-    public SeriesListAdapter(Context context) {
+    public SeriesListAdapter(Context context, FragmentManager fragmentManager) {
         this.context = context;
+        this.fragmentManager = fragmentManager;
         manager = SubscriptionsManager.getInstance(context);
     }
 
@@ -31,15 +33,16 @@ public class SeriesListAdapter extends RecyclerView.Adapter<SeriesListAdapter.SL
     public SLViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View itemView = inflater.inflate(R.layout.subscriptions_list_layout, viewGroup, false);
+        final View itemView = inflater.inflate(R.layout.subscriptions_list_layout, viewGroup, false);
 
-        SLViewHolder holder = new SLViewHolder(itemView);
+        final SLViewHolder holder = new SLViewHolder(itemView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("SelectedSeriesID", manager.seriesData.get(i).id);
-                context.startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putInt("seriesID", manager.seriesData.get(holder.getAdapterPosition()).id);
+                FragmentStack fragmentStack = FragmentStack.getInstance();
+                fragmentStack.replaceFragment(FragmentStack.FragmentID.Details, fragmentManager, bundle);
             }
         });
         return holder;
@@ -54,10 +57,8 @@ public class SeriesListAdapter extends RecyclerView.Adapter<SeriesListAdapter.SL
         slViewHolder.nameView.setText(seriesData.name);
         slViewHolder.statusView.setText("Status: " + seriesData.status);
         slViewHolder.seasonsCountView.setText("Sesons: " + Integer.toString(seriesData.getLastSeason()));
+        slViewHolder.seriesOrdinal = i;
         if(seriesData.getLastEpisode() != null){
-            Log.i("EPISODE NAME", seriesData.getLastEpisode().episodeName);
-            Log.i("EPISODE NUMBER", Integer.toString(seriesData.getLastEpisode().episodeNumber));
-            Log.i("SEASOM NUMBER", Integer.toString(seriesData.getLastEpisode().seasonsNumber));
             slViewHolder.lastSeasonEpisodesView.setText("Last episode number: " + Integer.toString(seriesData.getLastEpisode().episodeNumber));
             slViewHolder.lastEpisodeAirDate.setText("Last aired: " + seriesData.getLastEpisode().firstAired);
         }else{
@@ -78,7 +79,7 @@ public class SeriesListAdapter extends RecyclerView.Adapter<SeriesListAdapter.SL
         TextView seasonsCountView;
         TextView lastSeasonEpisodesView;
         TextView lastEpisodeAirDate;
-
+        int seriesOrdinal;
         public SLViewHolder(View viewItem){
             super(viewItem);
             bannerView = viewItem.findViewById(R.id.SLbannerView);

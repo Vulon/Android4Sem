@@ -49,6 +49,7 @@
         android:layout_alignStart="@+id/FDdetailsLabel"
         android:layout_marginStart="0dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Real Day Of week"
         android:textAlignment="center"
         android:textColor="@color/blueColor" />
@@ -63,6 +64,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_toEndOf="@+id/FDsettingsRealDayOfWeek"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Real Hour"
         android:textAlignment="center"
         android:textColor="@color/blueColor" />
@@ -75,7 +77,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:spinnerMode="dropdown" />
 
@@ -86,7 +88,8 @@
         android:layout_below="@+id/FDsettingsRealDayOfWeek"
         android:layout_alignStart="@+id/FDsettingsRealDayOfWeek"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="User configurated notifications recieve time"
         android:textColor="@color/colorAccent"
         tools:text="User configurated notifications recieve time" />
@@ -99,6 +102,7 @@
         android:layout_alignStart="@+id/FDdetailsLabel"
         android:layout_marginStart="0dp"
         android:layout_marginTop="26dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Default notifications revieve time:"
         android:textColor="@color/colorAccent" />
 
@@ -108,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/FDspinner"
         android:layout_alignEnd="@+id/FDsettingsRealHour"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
         android:ems="10"
         android:inputType="number" />
@@ -121,6 +125,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="0dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Notification Hour"
         android:textColor="@color/colorAccent" />
 
@@ -130,10 +135,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/FDsettingsHourPicker"
         android:layout_alignEnd="@+id/FDsettingsHourPicker"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="-3dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Recieve Notifications"
         android:textAlignment="center"
         android:textColor="@color/RedColor" />
+
+    <Button
+        android:id="@+id/FDunsubscribeButton"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FDnotificationsSwitch"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimary"
+        android:text="UNSUBSCRIBE"
+        android:textAlignment="center"
+        android:textColor="@color/buttonBackground" />
 
 </RelativeLayout>

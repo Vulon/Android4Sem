@@ -10,26 +10,28 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.myanimeschedule.Activity.SeriesActivity;
 import com.example.myanimeschedule.DataStructure.ObservableData;
 import com.example.myanimeschedule.DataStructure.ObservableTitleData;
 import com.example.myanimeschedule.Adapters.SearchListAdapter;
 import com.example.myanimeschedule.DataStructure.SubscriptionsManager;
+import com.example.myanimeschedule.Fragments.SeriesListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Observable;
 
-public class HTTPMessenger {
+public class HTTPMessenger implements Serializable {
+
     private static final String APIKEY = "ZT6C3S8W5A1Y9U9L";
     //private static final String SEARCHKEY = "3b6959f1";
     private static final String BASEURL = "https://api.thetvdb.com";
     public static final String LANGUAGE = "en";
+    private static final long serialVersionUID = -4159529515369945655L;
     //https://www.thetvdb.com/banners/
     //private static final String SERACHURL = "http://www.omdbapi.com/";
     private static String token;
@@ -56,14 +58,14 @@ public class HTTPMessenger {
     }
 
 
-    public static void loadData(String userName, String userKey, String toKen, long expDate){
+    public void loadData(String userName, String userKey, String toKen, long expDate){
         username = userName;
         userkey = userKey;
         token = toKen;
         tokenExpDate = new Date(expDate);
     }
 
-    public static void login(String userName, String userKey, final ObservableData observable){
+    public void login(String userName, String userKey, final ObservableData observable){
         username = userName;
         userkey = userKey;
         tokenExpDate = new Date();
@@ -207,7 +209,7 @@ public class HTTPMessenger {
 
    }
 
-   public void getEpisodesInfo(final int seriesId, final SeriesActivity.EpisodesObserver.SLObservable observable, final Context context, final int seasonNumber){
+   public void getEpisodesInfo(final int seriesId, final SeriesListFragment.SLObservable observable, final Context context, final int seasonNumber){
        String url = BASEURL + "/series/" + Integer.toString(seriesId) + "/episodes/query?airedSeason=" + Integer.toString(seasonNumber);
        JsonObjectRequest request = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
            @Override
@@ -251,7 +253,7 @@ public class HTTPMessenger {
        };
        queue.add(request);
    }
-   public void getSeasonsInfo(final int id, final SeriesActivity.EpisodesObserver.SLObservable observable, final Context context){
+   public void getSeasonsInfo(final int id, final SeriesListFragment.SLObservable observable, final Context context){
         String url = BASEURL + "/series/" + Integer.toString(id) + "/episodes/summary";
         JsonObjectRequest request = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -289,19 +291,19 @@ public class HTTPMessenger {
         queue.add(request);
    }
 
-    public static String getToken() {
+    public String getToken() {
         return token;
     }
 
-    public static Date getTokenExpDate() {
+    public Date getTokenExpDate() {
         return tokenExpDate;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public static String getUserkey() {
+    public String getUserkey() {
         return userkey;
     }
 }

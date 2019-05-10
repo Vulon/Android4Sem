@@ -1,4 +1,4 @@
-package com.example.myanimeschedule.DataStructure;
+package com.example.myanimeschedule.Fragments;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.myanimeschedule.Adapters.EpisodesAdapter;
+import com.example.myanimeschedule.DataStructure.SubscriptionsManager;
 import com.example.myanimeschedule.R;
 
 public class PageFragment extends Fragment {
@@ -53,7 +54,7 @@ public class PageFragment extends Fragment {
         TextView genre = view.findViewById(R.id.FDgenre);
         TextView network = view.findViewById(R.id.FDnetwork);
         TextView overview = view.findViewById(R.id.FDoverview);
-        SubscriptionsManager.SeriesData  data = SubscriptionsManager.getInstance(getContext()).getSeries(seriesID);
+        SubscriptionsManager.SeriesData data = SubscriptionsManager.getInstance(getContext()).getSeries(seriesID);
         banner.setImageBitmap(data.banner.getBitmap());
         name.setText(data.name);
         status.setText("Status: " + data.status);

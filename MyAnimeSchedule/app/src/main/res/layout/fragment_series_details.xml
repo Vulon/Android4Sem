@@ -5,123 +5,142 @@
     android:layout_height="match_parent"
     android:textAlignment="center">
 
-    <TextView
-        android:id="@+id/FDoverview"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/FDnetwork"
-        android:layout_alignStart="@+id/FDname"
-        android:layout_alignEnd="@+id/FDname"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="0dp"
-        android:text="Overview"
-        android:textAlignment="center"
-        android:textColor="@color/blueColor"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/FDnetwork"
-        android:layout_width="180dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/FDgenre"
-        android:layout_alignStart="@+id/FDname"
-        android:layout_alignEnd="@+id/FDname"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="0dp"
-        android:text="Network"
-        android:textAlignment="center"
-        android:textColor="@color/blueColor"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/FDname"
-        android:layout_width="180dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/FDbanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="8dp"
-        android:text="Name"
-        android:textAlignment="center"
-        android:textColor="@color/RedColor"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/FDstatus"
-        android:layout_width="180dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/FDname"
-        android:layout_alignStart="@+id/FDname"
-        android:layout_alignEnd="@+id/FDname"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="0dp"
-        android:text="Status"
-        android:textAlignment="center"
-        android:textColor="@color/blueColor"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/FDgenre"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/FDstatus"
-        android:layout_alignStart="@+id/FDname"
-        android:layout_alignEnd="@+id/FDname"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="0dp"
-        android:text="Genre"
-        android:textAlignment="center"
-        android:textColor="@color/blueColor"
-        android:textSize="18sp" />
-
-    <ImageView
-        android:id="@+id/FDbanner"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/FDepisodesLabel1"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/FDdetailsLabel1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:text="Details"
-        android:textColor="@color/RedColor" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/FDepisodesLabel1"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/FDdetailsLabel1"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="0dp"
-        android:layout_toStartOf="@+id/FDsettingsLabel1"
-        android:layout_toEndOf="@+id/FDdetailsLabel1"
-        android:text="Episodes"
-        android:textAlignment="center"
-        android:textColor="@color/yellowColor" />
+            >
 
-    <TextView
-        android:id="@+id/FDsettingsLabel1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/FDdetailsLabel1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:text="Settings"
-        android:textAlignment="center"
-        android:textColor="@color/yellowColor" />
+            <TextView
+                android:id="@+id/FDoverview"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/FDnetwork"
+                android:layout_alignStart="@+id/FDname"
+                android:layout_alignEnd="@+id/FDname"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:text="Overview"
+                android:textAlignment="center"
+                android:textColor="@color/blueColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/FDnetwork"
+                android:layout_width="180dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/FDgenre"
+                android:layout_alignStart="@+id/FDname"
+                android:layout_alignEnd="@+id/FDname"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:text="Network"
+                android:textAlignment="center"
+                android:textColor="@color/blueColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/FDname"
+                android:layout_width="180dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/FDbanner"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:text="Name"
+                android:textAlignment="center"
+                android:textColor="@color/RedColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/FDstatus"
+                android:layout_width="180dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/FDname"
+                android:layout_alignStart="@+id/FDname"
+                android:layout_alignEnd="@+id/FDname"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:text="Status"
+                android:textAlignment="center"
+                android:textColor="@color/blueColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/FDgenre"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/FDstatus"
+                android:layout_alignStart="@+id/FDname"
+                android:layout_alignEnd="@+id/FDname"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="0dp"
+                android:text="Genre"
+                android:textAlignment="center"
+                android:textColor="@color/blueColor"
+                android:textSize="18sp"
+                android:fontFamily="@font/berkshire_swash" />
+
+            <ImageView
+                android:id="@+id/FDbanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/FDepisodesLabel1"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/FDdetailsLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="Details"
+                android:textColor="@color/RedColor" />
+
+            <TextView
+                android:id="@+id/FDepisodesLabel1"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/FDdetailsLabel1"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/FDsettingsLabel1"
+                android:layout_toEndOf="@+id/FDdetailsLabel1"
+                android:text="Episodes"
+                android:textAlignment="center"
+                android:textColor="@color/yellowColor" />
+
+            <TextView
+                android:id="@+id/FDsettingsLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/FDdetailsLabel1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:text="Settings"
+                android:textAlignment="center"
+                android:textColor="@color/yellowColor" />
+        </RelativeLayout>
+    </ScrollView>
+
+
 </RelativeLayout>

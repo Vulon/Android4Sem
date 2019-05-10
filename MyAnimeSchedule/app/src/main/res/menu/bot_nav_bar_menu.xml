@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/series"
+        android:icon="@drawable/list"
+        android:title="Series"/>
     <item
         android:id="@+id/notifications"
         android:icon="@drawable/history"
@@ -11,9 +14,6 @@
         android:icon="@drawable/weekcalendar"
         android:title="Schedule"/>
 
-    <item
-        android:id="@+id/series"
-        android:icon="@drawable/list"
-        android:title="Series"/>
+
 
 </menu>

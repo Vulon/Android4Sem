@@ -22,18 +22,23 @@ public class FileManager implements Serializable{
         try{
             FileOutputStream out = context.openFileOutput(filename, Context.MODE_PRIVATE);
 
-            AuthDataObject data = new AuthDataObject(messenger.getUsername(), messenger.getUserkey(),
-                    messenger.getToken(), messenger.getTokenExpDate().getTime());
+            String userName = messenger.getUsername();
+            String userKey = messenger.getUserkey();
+            String token = messenger.getToken();
+            long expDate = messenger.getTokenExpDate().getTime();
+            AuthDataObject dataObject = new AuthDataObject(userName, userKey, token, expDate);
+
             ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
             ObjectOutputStream objStream = new ObjectOutputStream(byteStream);
-            objStream.writeObject(data);
-            Log.i("FILE WRITE", "WRITTEN BYTES");
+            objStream.writeObject(dataObject);
+
+            Log.i("FILE MANAGER", "DATA SAVED");
             out.write(byteStream.toByteArray());
             out.close();
 
         }catch (Exception e){
             result = false;
-            Log.i("FILE SAVE ERROR", e.toString());
+            Log.e("FILE MANAGER","save data err "+ e.getMessage());
         }
         return result;
     }
@@ -50,7 +55,7 @@ public class FileManager implements Serializable{
             messenger.loadData(data.username, data.userkey, data.token, data.expDate);
             in.close();
         }catch (Exception e){
-            Log.e("AUTH DATA LOAD FAIL", e.toString());
+            Log.e("FILE MANAGER", "AUTH DATA LOAD FAIL" + e.toString());
             result = false;
         }
 
@@ -58,19 +63,19 @@ public class FileManager implements Serializable{
     }
     private class AuthDataObject implements Serializable {
 
-        private static final long serialVersionUID = 6429966187405578163L;
+        private static final long serialVersionUID = -1380589849356514989L;
         public String username;
         public String userkey;
         public String token;
         public long expDate;
-        public AuthDataObject(String username, String userkey, String token, long expDate) {
+        AuthDataObject(String username, String userkey, String token, long expDate) {
             this.username = username;
             this.userkey = userkey;
             this.token = token;
             this.expDate = expDate;
         }
 
-        public AuthDataObject(){
+        AuthDataObject(){
 
         }
     }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SElayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/SElastUpdated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SEname"
+        android:layout_alignStart="@+id/SEbanner"
+        android:layout_alignEnd="@+id/SEname"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="Last updated"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/SEbanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/SElastEpisodeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SElastUpdated"
+        android:layout_alignStart="@+id/SEbanner"
+        android:layout_alignEnd="@+id/SEname"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="Last episode number"
+        android:textAlignment="center"
+        android:textColor="@color/blueColor"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/SEname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SEbanner"
+        android:layout_alignStart="@+id/SEbanner"
+        android:layout_alignEnd="@+id/SEbanner"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="name"
+        android:textAlignment="center"
+        android:textColor="@color/RedColor"
+        android:textSize="20dp" />
+</RelativeLayout>

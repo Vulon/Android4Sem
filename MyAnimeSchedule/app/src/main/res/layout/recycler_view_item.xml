@@ -12,6 +12,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="5dp"
+      android:fontFamily="@font/berkshire_swash"
       android:text="Title"
       android:textAlignment="center"
       android:textColor="@color/colorPrimary" />
@@ -21,6 +22,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="5dp"
+      android:fontFamily="@font/berkshire_swash"
       android:paddingTop="5dp"
       android:text="Network"
       android:textAlignment="center" />
@@ -30,6 +32,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="5dp"
+      android:fontFamily="@font/berkshire_swash"
       android:paddingTop="5dp"
       android:text="Publish date"
       android:textAlignment="center" />
@@ -39,6 +42,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="5dp"
+      android:fontFamily="@font/berkshire_swash"
       android:paddingTop="5dp"
       android:text="Status"
       android:textAlignment="center" />

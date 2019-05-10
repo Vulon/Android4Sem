@@ -12,6 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Number"
         android:textColor="@color/blueColor" />
 
@@ -23,6 +24,7 @@
         android:layout_alignTop="@+id/ELInumber"
         android:layout_marginStart="87dp"
         android:layout_marginTop="0dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Name"
         android:textColor="@color/RedColor" />
 
@@ -34,6 +36,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="FirstAired"
         android:textColor="@color/colorAccent" />
 
@@ -47,6 +50,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="1dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Overview"
         android:textAlignment="textStart"
         android:textColor="@color/RedColor" />

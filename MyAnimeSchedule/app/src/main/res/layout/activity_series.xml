@@ -2,18 +2,16 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordLayout"
+    android:id="@+id/SeriesLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SeriesActivity">
-
+    tools:context=".Activity.MainActivity">
 
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavigationBar"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
+        android:id="@+id/SbottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_gravity="bottom"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
@@ -32,7 +30,7 @@
         android:id="@+id/SLrecycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="80dp"
         tools:layout_anchor="@id/bottomNavigationBar" />
 
     <android.support.design.widget.FloatingActionButton
@@ -47,7 +45,7 @@
         android:visibility="visible"
         app:backgroundTint="@color/yellowColor"
         app:elevation="0dp"
-        app:layout_anchor="@id/bottomNavigationBar"
+        app:layout_anchor="@id/SbottomNavigationBar"
         app:layout_anchorGravity="bottom|start"
         tools:layout_anchor="@id/bottomNavigationBar" />
 
@@ -66,5 +64,14 @@
         app:layout_anchor="@id/SLsearchButton"
         app:layout_anchorGravity="bottom|start"
         tools:layout_anchor="@id/SLsearchButton" />
+
+    <ProgressBar
+        android:id="@+id/updateProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:visibility="visible"
+        app:layout_anchor="@+id/SLupdateButton"
+        app:layout_anchorGravity="left|center" />
 
 </android.support.design.widget.CoordinatorLayout>

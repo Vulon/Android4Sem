@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ScheduleActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/SbottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:elevation="0dp"
+        app:menu="@menu/bot_nav_bar_menu" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/SrecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp" />
+</android.support.design.widget.CoordinatorLayout>

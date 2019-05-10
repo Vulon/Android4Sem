@@ -25,7 +25,7 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
         this.context = context;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
         public TextView network;
         public TextView publishDate;
@@ -38,19 +38,19 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
             status = (TextView)viewItem.findViewById(R.id.seriesStatus);
         }
         public void bind(){
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
+                public void onClick(View v) {
                     Intent intent = new Intent(context, SeriesInfoActivity.class);
                     try{
                         intent.putExtra("ID", jsons.get(getAdapterPosition()).getString("id"));
                     }catch (Exception e){
-                        Log.i("INTENT PUT", e.toString());
+                        Log.e("SEARCH LIST ADAPTER", "Intent put json id field: "+ e.toString());
                     }
                     intent.putExtra("mode", 0);
                     context.startActivity(intent);
-                    return true;
                 }
+
             });
         }
     }
@@ -89,7 +89,7 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
                 myViewHolder.publishDate.setText(jsons.get(i).getString("firstAired"));
                 myViewHolder.status.setText("Status: " +jsons.get(i).getString("status"));
             }catch (org.json.JSONException e) {
-                Log.i("JSON E IN ADAPTER", e.toString());
+                Log.e("SEARCH LIST ADAPTER", "On bind view holder json err " +e.toString());
             }
             myViewHolder.network.setVisibility(View.VISIBLE);
             myViewHolder.publishDate.setVisibility(View.VISIBLE);

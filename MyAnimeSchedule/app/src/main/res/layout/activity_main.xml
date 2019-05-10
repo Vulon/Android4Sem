@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.AuthActivity">
 
     <EditText
         android:id="@+id/usernameText"
@@ -38,6 +38,7 @@
         android:layout_width="210dp"
         android:layout_height="47dp"
         android:layout_marginTop="56dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Remember user data"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +51,7 @@
         android:layout_width="177dp"
         android:layout_height="54dp"
         android:layout_marginTop="56dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Enter"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

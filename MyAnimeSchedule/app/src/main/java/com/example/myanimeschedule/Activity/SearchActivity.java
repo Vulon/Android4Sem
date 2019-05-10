@@ -52,7 +52,7 @@ public class SearchActivity extends AppCompatActivity {
                 try{
                     jsonObjects.add(new JSONObject(strings.get(i)));
                 }catch (Exception e){
-                    Log.i("SAVED INST LOAD EXC", e.toString());
+                    Log.e("SEARCH ACT", "ON CREATE JSON READ ERR " +e.toString());
                 }
             }
             titleSearchLine.setText(savedInstanceState.getString("SearchLine"));
@@ -66,7 +66,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(titleSearchLine.getText().length() > 0){
-                    Log.i("ON CLICK","CLICKED");
                     messenger.searchSeries(titleSearchLine.getText().toString(), adapter);
                 }
             }

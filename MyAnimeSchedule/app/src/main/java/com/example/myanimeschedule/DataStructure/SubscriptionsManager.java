@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import com.example.myanimeschedule.Utills.NotificationsScheduler;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,8 +14,13 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import static com.example.myanimeschedule.Utills.NotificationsScheduler.getTimeInMillsFromDate;
 
 public class SubscriptionsManager implements Serializable {
 
@@ -22,8 +29,12 @@ public class SubscriptionsManager implements Serializable {
     public static final String FILENAME = "seriesData";
     private static SubscriptionsManager link = null;
 
+    public ArrayList<Integer> id_of_series_to_update;
+
+
     private SubscriptionsManager(Context context) {
         seriesData = new ArrayList<>();
+        id_of_series_to_update = new ArrayList<>();
         load(context);
     }
     public static SubscriptionsManager getInstance(Context context){
@@ -36,6 +47,21 @@ public class SubscriptionsManager implements Serializable {
 
     public void addNewSeries(String name, int id, Bitmap banner, String firstAired, String network, int runtime, ArrayList<String>genre, String overview, String status){
         seriesData.add(new SeriesData(name, id, banner, firstAired, network, runtime, genre, overview, status));
+        id_of_series_to_update.add(id);
+
+    }
+    public void deleteSeries(int seriesID){
+        for(int i = 0; i < seriesData.size(); i++){
+            if(seriesData.get(i).id == seriesID){
+                seriesData.remove(i);
+                return;
+            }
+        }
+    }
+
+    public void sortEpisodes(int seriesID){
+        SeriesData data = getSeries(seriesID);
+        Collections.sort(data.episodes);
     }
 
     public void save(Context context){
@@ -48,7 +74,7 @@ public class SubscriptionsManager implements Serializable {
             out.write(byteStream.toByteArray());
             out.close();
         }catch (Exception e){
-            Log.i("DATA SAVE FAIL", e.getMessage());
+            Log.e("SUBSCRIPTION MANAGER", "SAVE EXC "+e.getMessage());
         }
 
     }
@@ -81,6 +107,28 @@ public class SubscriptionsManager implements Serializable {
         return  null;
     }
 
+    public SeriesData.Episode getEpisodeByWeekNumber(int seriesID, int weekNumber){
+        SeriesData data = getSeries(seriesID);
+        Calendar calendar = GregorianCalendar.getInstance();
+        int yearNumber = calendar.get(Calendar.YEAR);
+        for(SeriesData.Episode episode : data.episodes){
+            calendar.setTimeInMillis(getTimeInMillsFromDate(episode.firstAired));
+
+            if(calendar.get(Calendar.YEAR) != yearNumber){
+                continue;
+            }
+
+            int episodeWeekNumber = calendar.get(Calendar.WEEK_OF_YEAR);
+            if(episodeWeekNumber > weekNumber){
+                return  null;
+            }
+            if (episodeWeekNumber == weekNumber){
+                return episode;
+            }
+        }
+        return null;
+    }
+
     public void load(Context context){
         try{
             FileInputStream in = context.openFileInput(FILENAME);
@@ -88,7 +136,7 @@ public class SubscriptionsManager implements Serializable {
             seriesData = (ArrayList<SeriesData>) objSream.readObject();
             in.close();
         }catch (Exception e){
-            Log.e("DATA LOAD FAIL", "DATA LOAD FAIL");
+            Log.e("SUBSCRIPTION MANAGER", "LOCAL DATA LOAD FAIL");
         }
     }
 
@@ -213,7 +261,7 @@ public class SubscriptionsManager implements Serializable {
                 SelectedHour = realHour;
             }
         }
-        public class Episode implements Serializable {
+        public class Episode implements Serializable, Comparable {
             private static final long serialVersionUID = 4750439792537792170L;
             public int seasonsNumber;
             public int episodeNumber;
@@ -222,6 +270,24 @@ public class SubscriptionsManager implements Serializable {
             public String episodeName;
             public String firstAired;
             public String episodeOverView;
+
+            @Override
+            public int compareTo(Object o) {
+                Episode other = (Episode)o;
+                if(seasonsNumber < other.seasonsNumber){
+                    return -1;
+                }else if(seasonsNumber > other.seasonsNumber){
+                    return 1;
+                }else{
+                    if(episodeNumber < other.episodeNumber){
+                        return  -1;
+                    }else if(episodeNumber > other.episodeNumber){
+                        return 1;
+                    }else {
+                        return 0;
+                    }
+                }
+            }
 
             public Episode(int seasonsNumber, int episodeNumber, long episodeID, long seasonID, String episodeName, String firstAired, String episodeOverView) {
                 this.seasonsNumber = seasonsNumber;

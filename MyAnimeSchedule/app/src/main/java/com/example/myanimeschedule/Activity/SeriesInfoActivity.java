@@ -124,7 +124,7 @@ public class SeriesInfoActivity extends AppCompatActivity {
                             genrelist.add(array.getString(i));
                         }
                     }catch (Exception e){
-                        Log.e("JSON ARRAY FAIL", e.getMessage());
+                        Log.e("SERIES INFO ACT", "ADD SERIES JSON ERROR" +e.getMessage());
                     }
                     String timeLine = object.getString("airsTime");
                     int hour;
@@ -149,11 +149,11 @@ public class SeriesInfoActivity extends AppCompatActivity {
                             data.name, object.getInt("id"), bannerBitmap, data.firstAired, data.network, object.getInt("runtime"),
                             genrelist, data.overView, data.status);
                     series.getSeries(object.getInt("id")).setAirTime(dayOfWeekIndex, hour);
-                    Log.i("DAY DAY DAY", Integer.toString(dayOfWeekIndex) + " "  +Integer.toString(hour));
+
 
                     series.save(getApplicationContext());
                 }catch (Exception e){
-                    Log.e("Subscribe JSON FAIL", e.getMessage());
+                    Log.e("SERIES INFO ACT", "ADD SERIES SOME EXC "+e.getMessage());
                 }
             }
         }
@@ -187,10 +187,10 @@ public class SeriesInfoActivity extends AppCompatActivity {
 
 
                 }catch (Exception e){
-                    Log.i("JSON OBSERVER EXC", e.toString());
+                    Log.e("SERIES INFO ACT", "INFO OBSERVER ON UPDATE "+ e.toString());
                 }
             }else{
-                Log.i("OBSERVER EXC", data.errorMessage);
+                Log.e("SERIES INFO ACT", "INFO OBSERVER ON UPDATE "+data.errorMessage);
             }
 
         }
