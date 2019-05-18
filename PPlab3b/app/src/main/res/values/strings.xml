@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">PPLab3</string>
+    <string-array name="names">
+        <item>Иван</item>
+        <item>Дима</item>
+        <item>Артем</item>
+        <item>Эрнест</item>
+        <item>Влад</item>
+        <item>Алексей</item>
+        <item>Миша</item>
+        <item>Саша</item>
+        <item>Андрей</item>
+    </string-array>
+    <string-array name="surnames">
+        <item>Меньков</item>
+        <item>Данилов</item>
+        <item>Егоров</item>
+        <item>Петров</item>
+        <item>Ануфриев</item>
+        <item>Вихирев</item>
+        <item>Политов</item>
+        <item>Бедриков</item>
+        <item>Верба</item>
+    </string-array>
+    <string-array name="patronymic">
+        <item>Максимович</item>
+        <item>Федорович</item>
+        <item>Денисович</item>
+        <item>Петрович</item>
+        <item>Андреевич</item>
+        <item>Алексеевич</item>
+        <item>Александрович</item>
+        <item>Михаилович</item>
+    </string-array>
+</resources>
