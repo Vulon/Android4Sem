@@ -34,7 +34,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.St
     @Override
     public void onBindViewHolder(@NonNull StudentHolder studentHolder, int i) {
         studentHolder.idTextView.setText(Integer.toString(students.get(i).ID));
-        String nline = "";
+        String nline = "FIO:";
         nline += students.get(i).surname + " " + students.get(i).name + " " + students.get(i).patronymic;
         studentHolder.fioTextView.setText(nline);
         Calendar calendar = GregorianCalendar.getInstance();

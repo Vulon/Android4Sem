@@ -29,10 +29,10 @@ public class MyDataHolder {
             MIGRATION_1_2 = new Migration(1, 2) {
                 @Override
                 public void migrate(@NonNull SupportSQLiteDatabase database) {
-                    database.execSQL("CREATE TABLE 'student_new' ('ID' INTEGER, 'name' TEXT"
-                            + ", 'surname' TEXT, patronymic TEXT, 'date' LONG, PRIMARY KEY('ID'))");
-                    database.execSQL("INSERT INTO student_new (ID, name, surname, patronymic, date) "+
-                            " SELECT ID, substr(credentials, 1, pos - 1), substr(credentials, pos + 1), '', date FROM"+
+                    database.execSQL("CREATE TABLE 'student_new' ('ID' INTEGER NOT NULL, 'surname' TEXT"
+                            + ", 'name' TEXT, patronymic TEXT, 'timestamp' INTEGER NOT NULL, PRIMARY KEY('ID'))");
+                    database.execSQL("INSERT INTO student_new (ID, name, surname, patronymic, timestamp) "+
+                            " SELECT ID, substr(credentials, 1, pos - 1), substr(credentials, pos + 1), '', timestamp FROM"+
                             "(SELECT *, instr(credentials, ' ') AS pos FROM student)");
                     database.execSQL("UPDATE student_new SET patronymic = substr(surname, instr(surname, ' ') + 1) ");
                     database.execSQL("UPDATE student_new SET surname = substr(surname, 1, instr(surname, ' '))");

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PPLab3</string>
+    <string name="app_name">PPLab3b</string>
     <string-array name="names">
         <item>Иван</item>
         <item>Дима</item>

@@ -18,16 +18,13 @@ public class MainActivity extends AppCompatActivity {
         Button thirdButton = findViewById(R.id.thirdButton);
         final AppDatabase appDatabase = MyDataHolder.getDatabase(getApplicationContext());
         isReady = false;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                appDatabase.studentDao().deleteAll();
-                for(int i = 0; i < 5; i++){
-                    appDatabase.studentDao().insert(MyDataHolder.generateStudent(i));
-                }
-                MyDataHolder.studentList = appDatabase.studentDao().getAll();
-                isReady = true;
+        new Thread(() -> {
+            appDatabase.studentDao().deleteAll();
+            for(int i = 0; i < 5; i++){
+                appDatabase.studentDao().insert(MyDataHolder.generateStudent(i));
             }
+            MyDataHolder.studentList = appDatabase.studentDao().getAll();
+            isReady = true;
         }).start();
 
         firstButton.setOnClickListener(new View.OnClickListener() {
