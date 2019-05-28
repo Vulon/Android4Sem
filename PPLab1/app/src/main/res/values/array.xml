@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/s1</item>
+        <item>@drawable/s2</item>
+        <item>@drawable/s3</item>
+        <item>@drawable/s4</item>
+        <item>@drawable/s5</item>
+        <item>@drawable/s6</item>
+        <item>@drawable/s7</item>
+        <item>@drawable/s8</item>
+        <item>@drawable/s9</item>
+        <item>@drawable/s10</item>
+        <item>@drawable/s11</item>
+        <item>@drawable/s12</item>
+        <item>@drawable/s13</item>
+        <item>@drawable/s14</item>
+        <item>@drawable/s15</item>
+        <item>@drawable/s16</item>
+        <item>@drawable/s17</item>
+        <item>@drawable/s18</item>
+        <item>@drawable/s19</item>
+        <item>@drawable/s20</item>
+        <item>@drawable/s21</item>
+        <item>@drawable/s22</item>
+        <item>@drawable/s23</item>
+        <item>@drawable/s24</item>
+        <item>@drawable/s25</item>
+        <item>@drawable/s26</item>
+        <item>@drawable/s27</item>
+        <item>@drawable/s28</item>
+        <item>@drawable/s29</item>
+        <item>@drawable/s30</item>
+        <item>@drawable/s31</item>
+        <item>@drawable/s32</item>
+        <item>@drawable/s33</item>
+        <item>@drawable/s34</item>
+        <item>@drawable/s35</item>
+        <item>@drawable/s36</item>
+        <item>@drawable/s37</item>
+        <item>@drawable/s38</item>
+        <item>@drawable/s39</item>
+        <item>@drawable/s41</item>
+        <item>@drawable/s42</item>
+        <item>@drawable/s43</item>
+        <item>@drawable/s44</item>
+        <item>@drawable/s45</item>
+        <item>@drawable/s46</item>
+        <item>@drawable/s47</item>
+        <item>@drawable/s48</item>
+        <item>@drawable/s49</item>
+        <item>@drawable/s50</item>
+        <item>@drawable/s51</item>
+        <item>@drawable/s52</item>
+        <item>@drawable/s53</item>
+    </array>
+</resources>
